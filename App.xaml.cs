@@ -3,28 +3,31 @@ using Crisan_Iulia_Lab7.Data;
 using System.IO;
 
 
-namespace Crisan_Iulia_Lab7
+
+namespace Crisan_Iulia_Lab7;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    static ShoppingListDatabase database;
+    public static ShoppingListDatabase Database
     {
-        static ShoppingListDatabase database;
-        public static ShoppingListDatabase Database
+        get
         {
-            get
+            if (database == null)
             {
-                if (database == null)
-                {
-                    database = new
-                   ShoppingListDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.
-                   LocalApplicationData), "ShoppingList.db3"));
-                }
-                return database;
+                database = new
+               ShoppingListDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.
+               LocalApplicationData), "ShoppingList.db3"));
             }
-        }
-        public App()
-        {
-            InitializeComponent();
-            MainPage = new AppShell();
+            return database;
         }
     }
+    public App()
+    {
+        InitializeComponent();
+
+        MainPage = new AppShell();
+    }
 }
+
+

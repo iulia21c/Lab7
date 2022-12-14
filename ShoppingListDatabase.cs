@@ -1,9 +1,8 @@
-﻿using SQLite;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Crisan_Iulia_Lab7.Models;
+﻿using Crisan_Iulia_Lab7.Models;
+using SQLite;
+using System.Collections;
 
-namespace Crisan_Iulia_Lab7.Data 
+namespace Crisan_Iulia_Lab7
 {
     public class ShoppingListDatabase
     {
